@@ -109,6 +109,27 @@ getUsersCreditDetails(usersArray);
 
 const genderView = (users) => {
   // Your code goes here ...
+  // 1. Hay que usar el método filter dos veces. ¿Que propiedad de cada obeto vamos a usar para filtrar el array? gender
+
+  let femaleUsersObjects = users.filter(function (user) {
+    if (user.gender === 'female') {
+      return true;
+    }
+    return false;
+  }); // = usar adecuadamente el metodo filter sobre 'users' para que me devuelva solo las mujeres
+  console.log(femaleUsersObjects);
+  
+  let maleUsersObjects = users.filter((user) => user.gender === 'male'); // = usar adecuadamente el metodo filter sobre 'users' para que me devuelva solo los hombres
+
+  console.log(maleUsersObjects);
+  
+  // 2. Hay que devolver un objeto con dos propiedades.
+  // 2.1 La propiedad femaleUsers contiene el nombre de todas las mujeres. Usar el método map
+  // 2.2 LA propiedad maleUsers contiene el nombre de todos los hombres. Usar el método map
+  return {
+    femaleUsers: femaleUsersObjects.map(x => x.firstName + x.lastName), 
+    maleUsers: maleUsersObjects.map(x => x.firstName + x.lastName)
+  }
 };
 
 console.log("gender view", genderView(usersArray));

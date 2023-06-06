@@ -65,7 +65,8 @@ const getFirstNames = (arr) => {
   const userFirstNames = [];
   for (let user of arr) {
     // Your code goes here ...
-  }
+    user.filter(arr.firstName);
+  };
 };
 
 getFirstNames(usersArray);
